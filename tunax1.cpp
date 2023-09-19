@@ -7,7 +7,7 @@
 #include "explorer.h"
 #pragma warning(disable:4996)
 
-/* ---written by: абшдн сбп
+/* ---written by: ЧђЧ‘ЧЁЧ”Чќ ЧЎЧ‘Чџ
 *  ---date: 18.09.2023
 *  ---please dont copy
 *  ---talk to me: +972585005617

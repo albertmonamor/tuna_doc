@@ -9,14 +9,31 @@ using namespace nlohmann;
 
 
 
-// simple socket. use with http protocol
+// ---
+// מחלקה לניהול בסיסי של תקשורת בפרוטוקול 
+// http
+// 2 מתודות בלבד
+// ---
 class http: tcp_socket
 {
 public:
+	// ---
+	// param ip: כתובת השרת המרוחק
+	// param port: יציאה
+	// param index: נתיב לניווט בשרת
+	// param params: ארגומנטים בעת שימוש באחד מהמתודות לצורך העברת מידע לשרת
+	// ---
 	http(const char* ip, int port=80, string index="/", string params="");
-	// get method
+	
+	// ---
+	// GET מתודה
+	// ---
 	string get();
-	// post method, RETURN json but as string 
+
+	// ---
+	// POST מתודה
+	// מחזיר את גוף ההודעה כמחרוזת
+	// ---
 	json post();
 
 	// vars
@@ -26,6 +43,9 @@ public:
 	const char* host;
 
 private:
+	// ---
+	// מרכיב את חבילת המידע על פי הפרוטוקול
+	// ---
 	string s_http_packet(string method);
 };
 

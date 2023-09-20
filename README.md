@@ -7,4 +7,7 @@ https://github.com/nothings/stb
 
 בקבצים למעלה קיים קובץ "trojan_project.pdf" שמכיל תרשים תמציתי על אורך חיי הסוס
 
+#
+#
+תמיכה רק במערכת windows
 
